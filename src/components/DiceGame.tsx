@@ -8,7 +8,8 @@ const DiceGame: React.FC = () => {
   const [action, setAction] = useState<string>('');
   const [bodyPart, setBodyPart] = useState<string>('');
   const [isRolling, setIsRolling] = useState<boolean>(false);
-  
+  const [checkSensitiveParts, setCheckSensitiveParts] = useState<boolean>(true); // Novo estado
+
   const data = diceContent[language];
 
   const getRandomItem = (array: string[]) => {
@@ -17,24 +18,27 @@ const DiceGame: React.FC = () => {
 
   const rollDice = () => {
     if (isRolling) return;
-    
+
     setIsRolling(true);
     setAction('');
     setBodyPart('');
-    
+
     // Simulate rolling animation with timeout
     setTimeout(() => {
-      // Generate a safe combination
       let newAction, newBodyPart;
       let safeCombo = false;
-      
-      // Keep trying until we get a safe combination
+
+      // Keep trying until we get a valid combination
       while (!safeCombo) {
         newAction = getRandomItem(data.actions);
         newBodyPart = getRandomItem(data.bodyParts);
-        safeCombo = isSafeCombination(newAction, newBodyPart, language);
+
+        // Verifica a combinação com base no estado de checkSensitiveParts
+        safeCombo = checkSensitiveParts
+          ? isSafeCombination(newAction, newBodyPart, language)
+          : true; // Ignora a verificação se checkSensitiveParts for false
       }
-      
+
       setAction(newAction);
       setBodyPart(newBodyPart);
       setIsRolling(false);
@@ -66,6 +70,33 @@ const DiceGame: React.FC = () => {
               <span className="text-xl font-bold text-sexy-red">{bodyPart}</span>
             </div>
           </div>
+        </div>
+
+        {/* Radio Buttons for Sensitive Parts */}
+        <div className="mb-4">
+          <p className="text-sm font-medium mb-2">Verificar ações sensíveis:</p>
+          <label className="block">
+            <input
+              type="radio"
+              name="sensitiveCheck"
+              value="true"
+              checked={checkSensitiveParts === true}
+              onChange={() => setCheckSensitiveParts(true)}
+              className="mr-2"
+            />
+            Habilitar
+          </label>
+          <label className="block">
+            <input
+              type="radio"
+              name="sensitiveCheck"
+              value="false"
+              checked={checkSensitiveParts === false}
+              onChange={() => setCheckSensitiveParts(false)}
+              className="mr-2"
+            />
+            Desabilitar
+          </label>
         </div>
         
         <button 
