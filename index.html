@@ -6,7 +6,12 @@
     <title>Sexy Dice Roller</title>
     <meta name="description" content="Sexy Dice Roller - Um jogo divertido e sensual!" />
   </head>
-
+  <script>
+    // Redireciona para o index.html se a rota não for encontrada
+    if (!location.pathname.startsWith('/Site-Dado/')) {
+      location.href = '/Site-Dado/';
+    }
+  </script>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
