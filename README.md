@@ -1,69 +1,64 @@
-# Welcome to your Lovable project
+# 🎲🔥 Sexy Dice
 
-## Project info
+Sexy Dice é um jogo interativo que sorteia combinações de ações e partes do corpo para criar momentos divertidos e sensuais. O usuário pode personalizar o idioma e habilitar ou desabilitar a verificação de combinações sensíveis.
 
-**URL**: https://lovable.dev/projects/3d5ca630-a532-4ac9-9a82-e7c2d2218c2c
+## 🚀 Funcionalidades
 
-## How can I edit this code?
+- **🎲 Sorteio de Combinações:** Gera uma ação e uma parte do corpo aleatoriamente.
+- **🌍 Idiomas Suportados:** Inglês (`en`) e Português (`pt`).
+- **🔞 Verificação de Combinações Sensíveis:** Permite habilitar ou desabilitar ações que envolvem partes sensíveis.
+- **📱 Interface Responsiva:** Design moderno e estilizado com animações.
 
-There are several ways of editing your application.
+## 🛠 Tecnologias Utilizadas
 
-**Use Lovable**
+- **⚛️ React:** Biblioteca para construção da interface.
+- **🦺 TypeScript:** Tipagem estática para maior segurança no código.
+- **🎨 TailwindCSS:** Framework para estilização rápida e responsiva.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3d5ca630-a532-4ac9-9a82-e7c2d2218c2c) and start prompting.
+## 📂 Estrutura útil do Projeto
 
-Changes made via Lovable will be committed automatically to this repo.
 
-**Use your preferred IDE**
+```plaintext
+src/
+├── components/
+│   ├── DiceGame.tsx          # Componente principal do jogo
+│   ├── LanguageSelector.tsx  # Componente para seleção de idioma
+├── utils/
+│   ├── diceData.ts           # Dados de ações e partes do corpo
+│   ├── combinationUtils.ts   # Lógica para verificar combinações seguras
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🎮 Como Usar
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Selecione o Idioma:**
+   - Use o seletor no canto superior direito para alternar entre Inglês e Português.
+2. **Habilite ou Desabilite Ações Sensíveis:**
+   - Escolha entre "Habilitar" ou "Desabilitar" no grupo de opções abaixo do título.
+3. **Clique em "Rolar Dado":**
+   - O sistema sorteará uma ação e uma parte do corpo.
+   - Se a verificação de ações sensíveis estiver habilitada, combinações inseguras serão evitadas.
 
-**Use GitHub Codespaces**
+🎉 **Divirta-se!**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📜 Scripts Disponíveis
 
-## What technologies are used for this project?
+No diretório do projeto, você pode executar:
 
-This project is built with .
+```sh
+npm start
+```
+Inicia o aplicativo no modo de desenvolvimento. Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```sh
+npm run build
+```
+Compila o aplicativo para produção na pasta `build`.
 
-## How can I deploy this project?
+## 🤝 Contribuição
 
-Simply open [Lovable](https://lovable.dev/projects/3d5ca630-a532-4ac9-9a82-e7c2d2218c2c) and click on Share -> Publish.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir *issues* ou enviar *pull requests*.
 
-## I want to use a custom domain - is that possible?
+## 📄 Licença
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
