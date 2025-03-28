@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://lilja-j.github.io/site-dado",
+  "homepage": "https://lilja-j.github.io/Site-Dado",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
