@@ -72,33 +72,6 @@ const DiceGame: React.FC = () => {
           </div>
         </div>
 
-        {/* Radio Buttons for Sensitive Parts */}
-        <div className="mb-4">
-          <p className="text-sm font-medium mb-2">Verificar ações sensíveis:</p>
-          <label className="block">
-            <input
-              type="radio"
-              name="sensitiveCheck"
-              value="true"
-              checked={checkSensitiveParts === true}
-              onChange={() => setCheckSensitiveParts(true)}
-              className="mr-2"
-            />
-            Habilitar
-          </label>
-          <label className="block">
-            <input
-              type="radio"
-              name="sensitiveCheck"
-              value="false"
-              checked={checkSensitiveParts === false}
-              onChange={() => setCheckSensitiveParts(false)}
-              className="mr-2"
-            />
-            Desabilitar
-          </label>
-        </div>
-        
         <button 
           onClick={rollDice}
           disabled={isRolling}
@@ -116,6 +89,32 @@ const DiceGame: React.FC = () => {
             data.labels.rollButton
           )}
         </button>
+          {/* Radio Buttons for Sensitive Parts */}
+          <div className="flex justify-center items-center space-x-4 mb-4">
+            <p className="text-sm font-medium text-white">Filtrar ações sensíveis:</p>
+            <label className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="sensitiveCheck"
+                value="true"
+                checked={checkSensitiveParts === true}
+                onChange={() => setCheckSensitiveParts(true)}
+                className="w-5 h-5 border-2 border-sexy-red bg-sexy-black text-sexy-red rounded-full focus:ring-2 focus:ring-sexy-red"
+              />
+              <span className="text-white">Habilitar</span>
+            </label>
+            <label className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="sensitiveCheck"
+                value="false"
+                checked={checkSensitiveParts === false}
+                onChange={() => setCheckSensitiveParts(false)}
+                className="w-5 h-5 border-2 border-sexy-red bg-sexy-black text-sexy-red rounded-full focus:ring-2 focus:ring-sexy-red"
+              />
+              <span className="text-white">Desabilitar</span>
+            </label>
+          </div>
       </div>
     </div>
   );
