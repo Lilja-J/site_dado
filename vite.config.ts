@@ -18,5 +18,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/Site-Dado/", // Adicione o nome do repositório aqui
+  base: "/site-dado/", // Adicione o nome do repositório aqui
 }));
